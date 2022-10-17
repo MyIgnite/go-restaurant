@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Food } from '../../components/Food';
-import Header from '../../components/Header';
+import { Header } from '../../components/Header';
 import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import api from '../../services/api';
