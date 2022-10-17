@@ -15,7 +15,11 @@ interface foodSchema {
   available: boolean;
 }
 
+// Message GITHUB: You can use GET, POST, PUT, PATCH and DELETE. Changes aren't persisted between calls.
+// For demo we include random id in modalSchema
+
 interface modalSchema {
+  id?: number;
   name: string;
   image: string;
   price: string;
@@ -25,7 +29,7 @@ interface modalSchema {
 interface ModalAddFoodProps {
   isOpen: boolean;
   setIsOpen: () => void;
-  handleAddFood: (food: Omit<foodSchema, 'id' | 'available'>) => void;
+  handleAddFood: (food: Omit<foodSchema, 'available'>) => void;
 }
 
 export function ModalAddFood({ 
@@ -37,7 +41,7 @@ export function ModalAddFood({
 
   const handleSubmit = useCallback(
     async (data: modalSchema) => {
-      handleAddFood(data);
+      handleAddFood({...data, id: new Date().getTime()});
       setIsOpen();
     },
     [handleAddFood, setIsOpen],

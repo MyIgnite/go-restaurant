@@ -24,6 +24,8 @@ export function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
+  console.log('foods', foods)
+
   useEffect(() => {
     async function loadFoods() {
       api
@@ -49,6 +51,7 @@ export function Dashboard() {
       }
 
       const res = await api.post('/foods', { ...food, available: true });
+
       setFoods([...foods, res.data]);
       
     } catch (err) {
@@ -76,7 +79,8 @@ export function Dashboard() {
 
   async function handleDeleteFood(id: number) {
     try {
-      await api.delete(`/foods/${id}`);
+      // Enable if project runs locally
+      // await api.delete(`/foods/${id}`);
       setFoods(foods.filter(food => food.id !== id));
     } catch (err) {
       console.log(err);
