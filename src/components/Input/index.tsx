@@ -13,6 +13,7 @@ interface InputProps {
   name: string;
   icon?: IconType;
   placeholder: string;
+  label?: string;
 }
 
 export function Input({ name, icon: Icon,...rest }: InputProps) {
