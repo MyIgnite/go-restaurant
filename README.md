@@ -1,5 +1,5 @@
 # go-restaurant
-Gerenciar Cardápio ( Manage Menu )
+Desafio: Gerenciar Cardápio ( Manage Menu )
 
 https://go-restauran-ignite-github-renan-tsx.netlify.app
 
